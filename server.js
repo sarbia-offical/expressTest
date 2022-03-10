@@ -4,7 +4,7 @@
  * @Author: zouwenqin
  * @Date: 2022-03-09 22:28:51
  * @LastEditors: zouwenqin
- * @LastEditTime: 2022-03-09 22:51:04
+ * @LastEditTime: 2022-03-10 11:41:32
  */
 const express = require('express');
 async function constructorServer(){
@@ -19,7 +19,7 @@ async function constructorServer(){
     return app;
 }
 async function serveApi(options){
-    const port = Number(options.port || process.env.PORT || '3000')
+    const port = Number(options.port || process.env.PORT || '8080')
     const host = options.host || process.env.HOST || ''
     const servePromise = constructorServer();
     const [app] = await Promise.all([servePromise]);

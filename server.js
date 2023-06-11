@@ -4,14 +4,16 @@
  * @Author: zouwenqin
  * @Date: 2022-03-09 22:28:51
  * @LastEditors: zouwenqin
- * @LastEditTime: 2022-03-10 11:54:20
+ * @LastEditTime: 2023-06-11 17:40:47
  */
 const express = require('express');
 const sayHi = require('./api/sayHi');
+const product = require('./api/product');
 async function constructorServer(){
     const app = express();
     app.use(express.json({ extended: false }));
     app.use('/api/sayHi', sayHi);
+    app.use('/api/product', product)
     return app;
 }
 async function serveApi(options = {}){

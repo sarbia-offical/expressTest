@@ -14,7 +14,7 @@ async function constructorServer(){
     app.use('/api/sayHi', sayHi);
     return app;
 }
-async function serveApi(options){
+async function serveApi(options = {}){
     const port = Number(options.port || process.env.PORT || '8080')
     const host = options.host || process.env.HOST || ''
     const servePromise = constructorServer();
